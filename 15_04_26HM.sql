@@ -21,7 +21,7 @@ SELECT * FROM workshop_roster;
 
 SELECT display_name , contact_email , completion_score FROM workshop_roster;
 
-SELECT * FROM workshop_roster
+SELECT * FROM workshop_roster  
 WHERE wants_certificate = FALSE and last_activity < '2026-04-10';
 
 SELECT * FROM workshop_roster
@@ -29,5 +29,13 @@ WHERE display_name  LIKE 'm%'
 AND contact_email LIKE 'm%';
 
 SELECT * FROM workshop_roster
-WHERE completion_score < 85
+WHERE completion_score < 85;
 
+INSERT INTO workshop_roster (  roster_id,contact_email,display_name,wants_certificate,start_date,last_activity,completion_score,group_label)
+VALUES
+(6,	'mika@campus.com','NAAMA',1,'2026-05-01','2026-06-14 08:16:00',	84.5,	'advanced');
+-blocks by the  UNIQUE constraint
+INSERT INTO workshop_roster (  roster_id,contact_email,display_name,wants_certificate,start_date,last_activity,completion_score,group_label)
+VALUES
+(6,	'NAAMA@campus.com','NAAMA',1,'2026-05-01','2026-06-14 08:16:00',	120,	'advanced');
+-blocks by the  CHECK constraint
